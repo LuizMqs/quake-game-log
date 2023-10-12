@@ -34,13 +34,13 @@ This project is designed to parse Quake game log files, perform various data ana
    cd quake_game_log
    ```
 
-2. Build Project
+2. Build Project:
 
    ```shell
     docker build -t quake-game-log .
    ```
 
-3. Run Code
+3. Run Code:
 
 ### Linux
 
