@@ -29,10 +29,14 @@ impl Tournament {
             .ok_or(TournamentError::TournamentNotStarted)
         {
             for (id, player) in &game.players {
+                // Checks if the player is already registered in the tournament using id or additional
+
                 let (name, total_kills) = self
                     .ranking
                     .entry(id.clone())
                     .or_insert((player.name.to_string(), 0));
+
+                // Changes the player's name to the last one that that same id used
                 *name = player.name.clone();
                 *total_kills += player.kills;
             }

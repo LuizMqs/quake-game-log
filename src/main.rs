@@ -1,5 +1,5 @@
 use quake_game_log::{
-    log_parser::QuakeLogParser, read_file::LogReader, tournament_displayer::TournamentDisplayer,
+    log_parser::QuakeLogParser, read_file::LogReader, tournament_display::TournamentDisplay,
 };
 
 fn main() -> eyre::Result<()> {
@@ -11,7 +11,7 @@ fn main() -> eyre::Result<()> {
     let parser = QuakeLogParser::new();
     let parsed_data = parser.parse_log(file.log_data)?;
 
-    let display = TournamentDisplayer::new(parsed_data);
+    let display = TournamentDisplay::new(parsed_data);
     display.display_grouped_games()?;
     display.display_tournament_results()?;
 

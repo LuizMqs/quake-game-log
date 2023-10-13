@@ -4,11 +4,11 @@ use std::io::{self, Write};
 
 use crate::tournament::Tournament;
 
-pub struct TournamentDisplayer {
+pub struct TournamentDisplay {
     tournament: Tournament,
 }
 
-impl TournamentDisplayer {
+impl TournamentDisplay {
     pub fn new(tournament: Tournament) -> Self {
         Self { tournament }
     }

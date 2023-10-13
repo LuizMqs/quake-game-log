@@ -5,7 +5,7 @@ mod tests {
 
     use quake_game_log::game::Game;
     use quake_game_log::tournament::Tournament;
-    use quake_game_log::tournament_displayer::TournamentDisplayer;
+    use quake_game_log::tournament_display::TournamentDisplay;
 
     #[test]
     fn test_tournament_displayer_games_should_show_grouped_games() {
@@ -22,7 +22,7 @@ mod tests {
         assert!(tournament.tournament_handler(game1).is_ok());
         assert!(tournament.tournament_handler(game2).is_ok());
 
-        let display_results = TournamentDisplayer::new(tournament);
+        let display_results = TournamentDisplay::new(tournament);
         let result = display_results.display_grouped_games();
 
         assert!(result.is_ok());
@@ -39,7 +39,7 @@ mod tests {
         tournament.ranking.insert(2, ("Player2".to_string(), 15));
         tournament.ranking.insert(3, ("Player3".to_string(), 5));
 
-        let displayer = TournamentDisplayer::new(tournament);
+        let displayer = TournamentDisplay::new(tournament);
 
         assert!(displayer.display_tournament_results().is_ok());
     }

@@ -45,13 +45,26 @@ This project is designed to parse Quake game log files, perform various data ana
 ### Linux
 
 ```bash
-    docker run -v $(pwd):/app meu-projeto-rust .
+    docker run -v $(pwd):/app quake-game-log
 ```
 
 ### Windows
 
 ```shell
-    docker run -v ${PWD}:/app meu-projeto-rust .
+    docker run -v ${PWD}:/app quake-game-log
 ```
+
+4. If you don't want to use docker:
+
+   ```shell
+    cargo build
+    cargo run
+   ```
+
+5. To teste:
+
+   ```shell
+   cargo test
+   ```
 
 **The files containing the results will be saved in the data folder**
